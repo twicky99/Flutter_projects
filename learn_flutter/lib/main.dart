@@ -6,7 +6,7 @@ void main() => runApp(
   //   //enabled: !kReleaseMode,
   //   builder: (context) => MyApp(), // Wrap your app
   // ),
-  MyApp()
+  MainApp()
 );
 
 // class MyApp extends StatelessWidget {
@@ -25,12 +25,23 @@ void main() => runApp(
 //     );
 //   }
 // }
-
-class MyApp extends StatelessWidget {
+class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home:MyApp(),
+    );
+  }
+}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
         appBar: AppBar(
           title: Text("Flutter 02"),
           leading: IconButton(
@@ -40,17 +51,21 @@ class MyApp extends StatelessWidget {
           actions: [
             IconButton(
               icon: Icon(Icons.search),  //for the hamburger type menu icon
-              onPressed: (){},
+              onPressed: (){},  //can write functionality inside the curly brackets
             ),
             IconButton(
               icon: Icon(Icons.more_vert),  //for the hamburger type menu icon
               onPressed: (){},
             ),
           ],
-          flexibleSpace: Icon(
-            Icons.photo_camera,
-            size: 75.0,
-            color: Colors.white10,
+          // flexibleSpace: Icon(
+          //   Icons.photo_camera,
+          //   size: 75.0,
+          //   color: Colors.white10,
+          // ),
+          flexibleSpace: Image.asset(
+            "assets/first.jpg",
+            fit:BoxFit.cover,
           ),
         ),
       ),
