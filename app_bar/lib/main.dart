@@ -139,10 +139,29 @@ class ColumnRowApp extends StatelessWidget {
       ),
       body: Container(
         color:Colors.deepOrangeAccent,
-        width:200,
-        child: Column(
-          //mainAxisAlignment:MainAxisAlignment.center,
-          mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
+        //width:double.infinity,
+        height:200,
+        // child: Column(
+        //   //mainAxisAlignment:MainAxisAlignment.center,
+        //   mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children: [
+        //     Text(
+        //       'Text 01',
+        //       style: TextStyle(fontSize: 20),
+        //     ),
+        //     Text(
+        //       'Text 02',
+        //       style: TextStyle(fontSize: 20),
+        //     ),
+        //     Text(
+        //       'Text 03',
+        //       style: TextStyle(fontSize: 20),
+        //     )
+        //   ],
+        // ),
+        child: Row(
+          mainAxisAlignment:MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
@@ -156,10 +175,28 @@ class ColumnRowApp extends StatelessWidget {
             Text(
               'Text 03',
               style: TextStyle(fontSize: 20),
+            ),
+            Column(
+              //mainAxisAlignment:MainAxisAlignment.center,
+              mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+              'Text 01',
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(
+              'Text 02',
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(
+              'Text 03',
+              style: TextStyle(fontSize: 20),
+            )
+              ],
             )
           ],
         ),
-       
       ),
     );
   }
