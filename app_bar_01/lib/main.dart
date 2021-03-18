@@ -40,7 +40,8 @@ class MainApp extends StatelessWidget {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return DefaultTabController(
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: Text("Flutter 02"),
@@ -67,8 +68,31 @@ class MyApp extends StatelessWidget {
             "assets/first.jpg",
             fit:BoxFit.cover,
           ),
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car),text: "Car",),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            Icon(Icons.directions_car),tab1(),
+            Icon(Icons.directions_transit),
+            Icon(Icons.directions_bike),
+          ],
         ),
       ),
     );
   }
 }
+
+Widget tab1(){
+   return Container(
+    child:Center(
+       child: Text('Test'),
+    )
+   );
+}
+ 
