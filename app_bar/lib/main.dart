@@ -1,5 +1,5 @@
 
-// <---------------- contains how app bars, columns and rows widgets should be used --------->
+// <---------------- contains about Scaffold, Material App, DefaultTabCOntroller, AppBar, columns and rows widgets--------->
 import 'package:flutter/material.dart';
 //import 'package:device_preview/device_preview.dart';
 
@@ -20,6 +20,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        brightness: Brightness.dark,
         primarySwatch: Colors.blue,
       ),
       home:ColumnRowApp(),
@@ -125,7 +126,7 @@ Widget tab1(){
      ),
    );
 }
-
+// <-------------------------------------------------------------------------------------------------------->
 
 // <----------------contains how column widgets and row widgets can be used in different scenarios --------->
 class ColumnRowApp extends StatelessWidget {
@@ -135,6 +136,30 @@ class ColumnRowApp extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red[500],
         title: Text ('Column & Row')
+      ),
+      body: Container(
+        color:Colors.deepOrangeAccent,
+        width:200,
+        child: Column(
+          //mainAxisAlignment:MainAxisAlignment.center,
+          mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Text 01',
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(
+              'Text 02',
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(
+              'Text 03',
+              style: TextStyle(fontSize: 20),
+            )
+          ],
+        ),
+       
       ),
     );
   }
