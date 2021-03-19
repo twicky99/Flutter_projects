@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 
 class ThirdPage extends StatelessWidget {
+  var items = List<String>.generate(100, (index) => 'Items $index');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-          title: Text('ListView Builder   '),
-          
+          title: Text('Item List - ListView Builder'),
         ),
-        
+        body:ListView.builder(
+
+          itemCount: items.length,
+          itemBuilder: (context,index){   // using listviewBuilder to change the value dynamically.if an actual length is not known by the user should use which ensures good memory performance.
+            return ListTile(
+              title:Text(items[index])
+            );
+          },
+        ),
     );
   }
 }
